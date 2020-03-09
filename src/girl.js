@@ -23,7 +23,7 @@ class Girl extends Component{
                     {
                         this.state.list.map((item,index) =>{
                             return (
-                                    <GirlItem 
+                                    <GirlItem
                                         content={item}
                                         key={index+item}
                                         index={index}

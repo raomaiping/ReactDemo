@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 class GirlItem extends Component {
 
     constructor(props){
@@ -8,7 +9,9 @@ class GirlItem extends Component {
 
     render() { 
         return ( 
-            <li onClick={this.handleClick}>{this.props.content}</li>
+            <li onClick={this.handleClick}>
+            {this.props.avname}为你服务~{this.props.content}
+            </li>
          );
     }
 
@@ -18,4 +21,14 @@ class GirlItem extends Component {
     }
 }
  
+GirlItem.propTypes = {
+    avname:PropTypes.string.isRequired,
+    content:PropTypes.string,
+    index:PropTypes.number,
+    deleteItem:PropTypes.func
+}
+
+GirlItem.defaultProps = {
+    avname:'波多野结衣'
+}
 export default GirlItem;
