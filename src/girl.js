@@ -10,7 +10,15 @@ class Girl extends Component{
         }
     }
 
+    componentWillMount(){
+        console.log('componentWillMount-----------组件将要挂载到页面的时刻')
+    }
+
+    componentDidMount(){
+        console.log('componentDidMount-----------组件挂载完成的时刻')
+    }
     render(){
+        console.log('render-----------组件挂载中')
         return (
             <Fragment>
                 {/* 第一次写注释 */}
