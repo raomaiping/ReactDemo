@@ -16,10 +16,16 @@ class Girl extends Component{
                 {/* 第一次写注释 */}
                 <div>
                     <label htmlFor="rmp">增加服务:</label>
-                    <input id="rmp" className="input" value={this.state.inputValue} onChange={this.inputChange.bind(this)}/>
+                    <input 
+                        id="rmp" 
+                        className="input" 
+                        value={this.state.inputValue} 
+                        onChange={this.inputChange.bind(this)}
+                        ref = {(input) =>{this.input = input}}
+                    />
                     <button onClick={this.addList.bind(this)}>增加服务</button>
                 </div>
-                <ul>
+                <ul ref={(ul) =>{this.ul = ul}}>
                     {
                         this.state.list.map((item,index) =>{
                             return (
@@ -42,8 +48,9 @@ class Girl extends Component{
         // console.log(e.target.value)
         // console.log(this)
         this.setState({
-            inputValue:e.target.value
+            inputValue:this.input.value
         })
+
     }
 
     // 增加列表
@@ -51,7 +58,11 @@ class Girl extends Component{
         this.setState({
             list:[...this.state.list,this.state.inputValue],
             inputValue:''
+        },()=>{
+            console.log(this.ul.querySelectorAll('li').length)
         })
+
+        // console.log(this.ul.querySelectorAll('li').length)
     }
 
     // 删除列表项
