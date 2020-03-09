@@ -23,9 +23,12 @@ class Girl extends Component{
                     {
                         this.state.list.map((item,index) =>{
                             return (
-                                <div>
-                                    <GirlItem />
-                                </div>
+                                    <GirlItem 
+                                        content={item}
+                                        key={index+item}
+                                        index={index}
+                                        deleteItem={this.deleteItem.bind(this)}
+                                    />
                             )
                         })
                     }
