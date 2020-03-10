@@ -13,6 +13,9 @@ class GirlItem extends Component {
         console.log('child-componentWillReceiveProps')
     }
 
+    componentWillUnmount(){
+        console.log('child-componentWillUnmount-------组件即将卸载')
+    }
     render() { 
         return ( 
             <li onClick={this.handleClick}>
