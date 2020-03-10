@@ -1,4 +1,5 @@
 import React,{Component,Fragment} from 'react'
+import axios from 'axios'
 import './style.css'
 import GirlItem from './girlItem'
 class Girl extends Component{
@@ -8,6 +9,16 @@ class Girl extends Component{
             inputValue:"",
             list:['基础按摩','精油推背']
         }
+    }
+
+    componentDidMount(){
+        axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+             .then((res) =>{
+                 console.log('axios 获取数据成功:' + JSON.stringify(res))
+             })
+             .catch((err) =>{
+                console.log('axios 获取数据失败:' + err)
+             })
     }
 
     render(){
