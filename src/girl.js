@@ -2,6 +2,7 @@ import React,{Component,Fragment} from 'react'
 import axios from 'axios'
 import './style.css'
 import GirlItem from './girlItem'
+import Rmp from './Rmp'
 class Girl extends Component{
     constructor(props){
         super(props);
@@ -51,6 +52,7 @@ class Girl extends Component{
                         })
                     }
                 </ul>
+                <Rmp />
             </Fragment>
 
         )
